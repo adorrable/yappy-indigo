@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GHWSWF – Global Health & Wellness Social Welfare Foundation | Abuja, Nigeria</title>
+  <meta name="description" content="GHWSWF is an African humanitarian NGO in Abuja, focused on healthcare, welfare, and empowerment for the less privileged. Join as a volunteer, donate, or connect via WhatsApp." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --green:#2E7D32;        /* health, growth */
+      --blue:#1565C0;         /* trust, professionalism */
+      --soft:#F5F9F6;         /* background */
+      --text:#4A4A4A;          /* body text */
+      --accent:#F57C00;        /* CTA */
+      --bg:white;
+      --shadow:0 6px 20px rgba(0,0,0,.05);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:Open Sans, Arial, sans-serif;background:var(--soft);color:var(--text);} 
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    /* Layout */
+    .container{width:92%;max-width:1200px;margin:0 auto}
+    header.site-header{position:sticky;top:0;background:#fff;z-index:50;border-bottom:1px solid #eee}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}.logo{display:flex;align-items:center;gap:12px}
+    .logo-mark{width:38px;height:38px;border-radius:50%;background:conic-gradient(from 180deg at 50% 50%, #2E7D32, #1565C0);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+    .brand{font-family:'Poppins', sans-serif;font-weight:700;letter-spacing:.5px}
+    nav ul{list-style:none;display:flex;gap:18px;margin:0;padding:0}
+    nav a{font-family:'Open Sans', sans-serif;font-weight:600;font-size:14px;color:#333}
+    .btn, .cta{border:none;background:var(--accent);color:white;padding:14px 20px;border-radius:8px;font-family:Poppins,sans-serif;font-weight:700;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,.08)}
+    .btn.secondary{background:#fff;color:var(--blue);border:1px solid #d9e2f3}
+    .section{padding:64px 0}
+    .hero{display:grid;grid-template-columns:1.05fr 0.95fr;gap:40px;align-items:center}
+    .hero h1{font-family:'Poppins', sans-serif;font-size:48px;line-height:1.08;margin:0 0 12px}
+    .hero p{font-size:18px;line-height:1.6;color:#555;margin-bottom:20px}
+    .hero-visual{border-radius:14px;box-shadow:0 10px 25px rgba(0,0,0,.05)}
+    .cta-row{display:flex;gap:14px;align-items:center;margin-top:8px;flex-wrap:wrap}
+    .card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
+    .card{background:#fff;border-radius:12px;padding:18px;box-shadow:var(--shadow);border:1px solid #f0f0f0}
+    .card h3{margin:8px 0 6px;font-family:'Poppins', sans-serif;font-weight:700}
+    .program-icon{width:64px;height:64px;border-radius:14px;overflow:hidden;margin-bottom:8px;object-fit:cover;border:1px solid #e5e5e5}
+    .stat{font-family:'Poppins', sans-serif;font-weight:700}
+    .muted{color:#6b7280}
+    section .row{display:flex;gap:28px;flex-wrap:wrap}
+    .section-title{font-family:'Poppins', sans-serif;font-weight:700;font-size:28px;margin:0 0 8px}
+    .section-sub{color:#555;margin-bottom:16px}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+    .about p{line-height:1.7}
+    .grid-logos{display:flex;gap:14px;flex-wrap:wrap}
+    .table{width:100%;border-collapse:collapse}
+    .table th,.table td{padding:10px;border-bottom:1px solid #f0f0f0;text-align:left}
+    .stat-counter{font-size:28px;color:var(--blue);font-family:'Poppins', sans-serif}
+    .testimonial{background: #fff;border-radius:12px;padding:14px 16px;box-shadow:var(--shadow);}
+    .map{width:100%;border:0;height:360px;border-radius:12px}
+    .newsletter{display:flex;gap:12px;flex-wrap:wrap}
+    input[type="email"], input[type="text"], textarea{width:100%;padding:12px;border-radius:8px;border:1px solid #ddd;font-family:Open Sans,sans-serif}
+    footer{margin-top:40px;padding:28px 0;border-top:1px solid #eee;background:#fff}
+    .footer-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+
+    /* Floating WhatsApp button */
+    .fab-whatsapp{position:fixed;right:20px;bottom:20px;width:58px;height:58px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(0,0,0,.2);z-index:60}
+    .fab-whatsapp svg{width:28px;height:28px;fill:white}
+
+    /* Responsive */
+    @media (max-width: 1024px){
+      .hero{grid-template-columns:1fr;gap:20px}
+      .hero h1{font-size:40px}
+    }
+    @media (max-width: 700px){
+      nav ul{display:none}
+      .hero h1{font-size:32px}
+      .section{padding:48px 0}
+      .footer-grid{grid-template-columns:1fr}
+    }
+
+    /* Simple on-scroll animation */
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease-out, transform .6s ease-out}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+  </style>
+</head>
+<body>
+  <!-- Floating WhatsApp button (region: Africa) -->
+  <a class="fab-whatsapp" href="https://wa.me/2348071911789" target="_blank" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 3h-11A3.5 3.5 0 0 0 3 6.5v11A3.5 3.5 0 0 0 6.5 21h6.1l4.2 4-1.2-3.2A3.5 3.5 0 0 0 20.9 21H21a3 3 0 0 0 3-3v-9A6 6 0 0 0 17.5 3z"/></svg>
+  </a>
+
+  <!-- Header / Navigation -->
+  <header class="site-header" aria-label="Site header">
+    <div class="container nav">
+      <div class="logo">
+        <div class="logo-mark" aria-label="GHWSWF Logo">GH</div>
+        <div class="brand">
+          Global Health & Wellness
+          <br/>
+          Social Welfare Foundation
+        </div>
+      </div>
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#programs">Programs</a></li>
+          <li><a href="#impact">Impact</a></li>
+          <li><a href="#volunteer">Volunteer</a></li>
+          <li><a href="#donate">Donate</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" class="section hero container" aria-label="Hero section" >
+      <div class="hero-copy reveal">
+        <h1 style="font-family:Poppins, sans-serif;">Health & Hope for the Less Privileged.</h1>
+        <p>Since 2022, GHWSWF has been bringing life-saving healthcare, food relief, and empowerment to underserved communities across Nigeria.</p>
+        <div class="cta-row" aria-label="Primary CTAs">
+          <!-- Placeholder buttons (non-functional) -->
+          <button class="btn" type="button" aria-label="Donate Now (placeholder)">Donate Now</button>
+          <button class="btn" type="button" aria-label="Join as Volunteer (placeholder)">Join as Volunteer</button>
+          <!-- Messaging link alongside placeholder button -->
+          <a class="btn" href="https://wa.me/2348071911789?text=I+am+interested+in+donating" target="_blank" aria-label="WhatsApp chat to donate">
+            Chat on WhatsApp
+          </a>
+        </div>
+      </div>
+      <div class="hero-visual reveal">
+        <img src="https://im.runware.ai/image/ws/2/ii/eabc471e-fa54-408c-a3c4-9349c0942c48.jpg" alt="GHWSWF hero image" style="width:100%;height:420px;object-fit:contain;background:#fff;border-radius:14px;"/>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section container reveal" aria-label="About GHWSWF">
+      <div class="two-col" style="align-items:start;gap:28px;">
+        <div>
+          <h2 class="section-title" style="font-family:Poppins,sans-serif;">About Global Health & Wellness Social Welfare Foundation</h2>
+          <p class="section-sub">GHWSWF is a registered Nigerian NGO (CAC IT-184957) based in Abuja. We drive healthcare access, food relief, and empowerment for the less privileged across Nigeria, guided by values of dignity, collaboration, and transparent stewardship.</p>
+          <p>Registered on July 26, 2022, GHWSWF operates with a board of Trustees and a growing network of volunteers who bring free medical outreach, nutrition support, and digital inclusion programs to communities in need.</p>
+          <div class="grid-logos" aria-label="Key information">
+            <span class="muted">CAC: IT-184957</span>
+            <span class="muted">Headquarters: Abuja, Nigeria</span>
+          </div>
+        </div>
+        <div>
+          <h3 style="font-family:Poppins, sans-serif;margin:0 0 8px;font-size:20px">Leadership & Volunteers</h3>
+          <ul class="muted" style="margin:0;padding-left:18px;line-height:1.8">
+            <li>Board of Trustees</li>
+            <li>Executive Director</li>
+            <li>Volunteer Coordinators</li>
+          </ul>
+          <h3 style="font-family:Poppins, sans-serif;margin:16px 0 8px;font-size:20px">Values</h3>
+          <p class="muted" style="margin:0;line-height:1.6">Dignity, service, accountability, and community empowerment drive every program we run.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="section container" aria-label="Programs" >
+      <h2 class="section-title" style="font-family:Poppins,sans-serif;">Our Programs</h2>
+      <p class="section-sub">Five core initiatives delivering healthcare, nutrition, empowerment, and digital inclusion.</p>
+      <div class="card-grid" id="program-grid">
+        <article class="card reveal" aria-label="Primary Healthcare Outreaches">
+          <img class="program-icon" src="https://im.runware.ai/image/ws/2/ii/9ed1b4fe-c07f-4909-b2b5-fdc77cf3cb88.jpg" alt="Primary Healthcare Outreaches icon"/>
+          <h3 style="font-family:Poppins,sans-serif;">Primary Healthcare Outreaches</h3>
+          <p class="muted" style="margin:0 0 6px;">Free clinics, fever screening, immunization drives, and mobile care units in underserved communities.</p>
+          <p class="stat">Impact: 12,000+ lives touched</p>
+        </article>
+        <article class="card reveal" aria-label="Maternal & Child Health">
+          <img class="program-icon" src="https://im.runware.ai/image/ws/2/ii/bac1d1a0-9625-48d3-9361-19e73d7532ff.jpg" alt="Maternal & Child Health icon"/>
+          <h3 style="font-family:Poppins,sans-serif;">Maternal & Child Health Support</h3>
+          <p class="muted" style="margin:0 0 6px;">Antenatal care, nutrition, and newborn care in hospitals and outreach posts.</p>
+          <p class="stat">Impact: 5,000+ mothers cared for</p>
+        </article>
+        <article class="card reveal" aria-label="Food & Welfare Relief">
+          <img class="program-icon" src="https://im.runware.ai/image/ws/2/ii/cab07b74-1007-44e4-b8fc-c645f50bb60d.jpg" alt="Food & Welfare Relief icon"/>
+          <h3 style="font-family:Poppins,sans-serif;">Food & Welfare Relief</h3>
+          <p class="muted" style="margin:0 0 6px;">Relief packages, nutrition kits, and community feeding programs.</p>
+          <p class="stat">Impact: 27 communities served</p>
+        </article>
+        <article class="card reveal" aria-label="Digital Health & ICT Inclusion">
+          <img class="program-icon" src="https://im.runware.ai/image/ws/2/ii/ddbae945-4744-4b2c-8f99-481c4db64bd0.jpg" alt="Digital Health & ICT Inclusion icon"/>
+          <h3 style="font-family:Poppins,sans-serif;">Digital Health & ICT Inclusion</h3>
+          <p class="muted" style="margin:0 0 6px;">Telemedicine access, digital literacy, and e-health record awareness.</p>
+          <p class="stat">Impact: 2,500+ digital exchanges</p>
+        </article>
+        <article class="card reveal" aria-label="Women & Girls Empowerment">
+          <img class="program-icon" src="https://im.runware.ai/image/ws/2/ii/46b580f4-79fe-4f81-8d4d-94ecdaa6c681.jpg" alt="Women & Girls Empowerment icon"/>
+          <h3 style="font-family:Poppins,sans-serif;">Women & Girls Empowerment</h3>
+          <p class="muted" style="margin:0 0 6px;">Skills training, mentorship, and leadership development for girls and women.</p>
+          <p class="stat">Impact: 1,000+ empowered</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Impact / Success Stories -->
+    <section id="impact" class="section container" aria-label="Impact and success stories">
+      <h2 class="section-title" style="font-family:Poppins,sans-serif;">Impact & Success Stories</h2>
+      <p class="section-sub">Live stats and testimonials reflect our daily progress and community trust.</p>
+      <div class="row reveal" style="align-items:stretch;gap:20px;flex-wrap:wrap">
+        <div class="card" style="flex:1 1 240px;min-width:240px;">
+          <div class="stat-counter" id="live-lives">0</div>
+          <div class="muted">lives touched</div>
+        </div>
+        <div class="card" style="flex:1 1 240px;min-width:240px;">
+          <div class="stat-counter" id="live-communities">0</div>
+          <div class="muted">communities served</div>
+        </div>
+        <div class="card" style="flex:1 1 240px;min-width:240px;">
+          <div class="stat-counter" id="live-volunteers">0</div>
+          <div class="muted">volunteers mobilized</div>
+        </div>
+        <div class="card" style="flex:1 1 240px;min-width:240px;">
+          <div class="stat-counter" id="live-women-children">0</div>
+          <div class="muted">women & children supported</div>
+        </div>
+      </div>
+      <div class="row" style="margin-top:20px;gap:12px;">
+        <div class="testimonial" style="flex:1 1 320px;min-width:280px;">
+          <p>⭐ “GHWSWF brought free medical care to our village—forever grateful.”</p>
+        </div>
+        <div class="testimonial" style="flex:1 1 320px;min-width:280px;">
+          <p>⭐ “I found purpose volunteering with them in Abuja!”</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Volunteer Page -->
+    <section id="volunteer" class="section container" aria-label="Volunteer"> 
+      <h2 class="section-title" style="font-family:Poppins,sans-serif;">Volunteer with GHWSWF</h2>
+      <p class="section-sub">Be part of a movement that heals, feeds, and uplifts Africa.</p>
+      <form id="volunteer-form" class="two-col reveal" style="gap:20px;display:grid;grid-template-columns:1fr 1fr;align-items:flex-start;" onsubmit="event.preventDefault(); handleVolunteerSubmit();">
+        <div>
+          <label for="v-name">Full Name</label><br>
+          <input id="v-name" name="name" type="text" required>
+        </div>
+        <div>
+          <label for="v-email">Email</label><br>
+          <input id="v-email" name="email" type="email" required>
+        </div>
+        <div style="grid-column:1 / -1;">
+          <label for="v-area">Area of Interest</label><br>
+          <input id="v-area" name="area" type="text" required>
+        </div>
+        <div style="grid-column:1 / -1;">
+          <label for="v-notes">Message</label><br>
+          <textarea id="v-notes" name="notes" rows="4"></textarea>
+        </div>
+        <div style="grid-column:1 / -1;display:flex;gap:8px;align-items:center;justify-content:flex-start;">
+          <button class="btn" type="submit">Submit Registration</button>
+          <a href="https://wa.me/2348071911789?text=I+am+interested+in+volunteering" target="_blank" aria-label="WhatsApp volunteer chat">Chat on WhatsApp</a>
+        </div>
+      </form>
+    </section>
+
+    <!-- Donate Page -->
+    <section id="donate" class="section container" aria-label="Donate">
+      <h2 class="section-title" style="font-family:Poppins,sans-serif;">Donate</h2>
+      <p class="section-sub">Support healthcare, food relief, and empowerment programs. Tax-deductible donations encouraged where permitted.</p>
+      <div class="two-col" style="gap:20px;align-items:flex-start;display:grid;grid-template-columns:1fr 1fr;">
+        <div class="card reveal" aria-label="Bank transfer details">
+          <h3 style="font-family:Poppins,sans-serif;margin-top:0">Bank Transfer Details</h3>
+          <table class="table" aria-label="Bank details">
+            <tr><th>Account Name</th><td>GLOBAL HLTH & WELLNESS SOC. WEL FO</td></tr>
+            <tr><th>Bank</th><td>Zenith Bank PLC</td></tr>
+            <tr><th>USD Account</th><td>5073734353</td></tr>
+            <tr><th>Naira Account</th><td>1225267845</td></tr>
+            <tr><th>Swift Code</th><td>ZEIBNGLA</td></tr>
+          </table>
+          <p class="muted" style="margin:8px 0 0;">Tax-deductible donations where applicable.</p>
+        </div>
+        <div class="card reveal" aria-label="QR code for donations" style="display:flex;flex-direction:column;gap:12px;align-items:center;justify-content:center;">
+          <img src="https://im.runware.ai/image/ws/2/ii/1f6865fd-3ba3-48d8-b804-90c38c34dbda.jpg" alt="Donation QR code" style="width:180px;height:180px;object-fit:cover;border-radius:10px;border:1px solid #eee;"/>
+          <p class="muted" style="text-align:center;margin:0;">Scan to donate via QR code. This is a generated visual for demonstration.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews / Testimonials Page (embedded) -->
+    <section id="testimonials" class="section container reveal" aria-label="Testimonials">
+      <h2 class="section-title" style="font-family:Poppins,sans-serif;">Reviews & Testimonials</h2>
+      <div class="card-grid" style="grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-top:8px">
+        <div class="testimonial" aria-label="Testimonial 1">
+          <p>⭐ “GHWSWF brought free medical care to our village—forever grateful.”</p>
+        </div>
+        <div class="testimonial" aria-label="Testimonial 2">
+          <p>⭐ “I found purpose volunteering with them in Abuja!”</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Page -->
+    <section id="contact" class="section container reveal" aria-label="Contact">
+      <h2 class="section-title" style="font-family:Poppins,sans-serif;">Contact Us</h2>
+      <div class="two-col" style="display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch;">
+        <div class="card" aria-label="Contact form">
+          <form id="contact-form" onsubmit="event.preventDefault(); handleSubmitContact();">
+            <div style="margin-bottom:8px;">
+              <label for="c-name">Name</label><br/>
+              <input id="c-name" type="text" required>
+            </div>
+            <div style="margin-bottom:8px;">
+              <label for="c-email">Email</label><br/>
+              <input id="c-email" type="email" required>
+            </div>
+            <div style="margin-bottom:8px;">
+              <label for="c-message">Message</label><br/>
+              <textarea id="c-message" rows="4" required></textarea>
+            </div>
+            <button class="btn" type="submit">Send Message</button>
+            <a href="https://wa.me/2348071911789" target="_blank" style="margin-left:8px;" aria-label="WhatsApp contact">WhatsApp</a>
+          </form>
+        </div>
+        <div class="card" aria-label="Location and map">
+          <h3 style="margin-top:0;font-family:Poppins,sans-serif">Our Location</h3>
+          <iframe class="map" src="https://www.google.com/maps?q=Abuja,+Nigeria&output=embed" title="GHWSWF location in Abuja" allowfullscreen></iframe>
+          <p class="muted" style="margin-top:8px;">Abuja, Nigeria</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Sign-up -->
+    <section class="section container reveal" aria-label="Newsletter">
+      <h2 class="section-title" style="font-family:Poppins,sans-serif;">Newsletter</h2>
+      <p class="section-sub">Get updates on medical outreaches, relief efforts, and empowerment programs.</p>
+      <form id="newsletter-form" class="newsletter" onsubmit="event.preventDefault(); handleNewsletter();">
+        <input type="email" id="news-email" placeholder="Email address" required style="flex:1 1 260px;min-width:260px;">
+        <button class="btn" type="submit">Subscribe</button>
+      </form>
+      <p class="muted" id="newsletter-status" style="margin:8px 0 0;">We respect your privacy. Unsubscribe anytime.</p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <strong>GHWSWF</strong><br/>
+        Email: info@ghwswf.org | Phone: +234 807 191 1789
+      </div>
+      <div style="text-align:right;">
+        <a href="https://wa.me/2348071911789" target="_blank" aria-label="WhatsApp contact for GHWSWF">Chat with us on WhatsApp</a>
+      </div>
+    </div>
+    <div class="container" style="margin-top:14px;display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;font-size:12px;color:#555;">
+      <div>© 2025 GHWSWF | All Rights Reserved</div>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms</a>
+        <a href="#volunteer">Volunteer</a>
+        <a href="#donate">Donate</a>
+      </div>
+    </div>
+    <div class="container" style="margin-top:6px;text-align:left;font-size:12px;color:#666;">
+      made with ❤️ by adorrable.dev
+    </div>
+  </footer>
+
+  <script>
+    // Simple on-scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries)=>{
+      entries.forEach(e => {
+        if(e.isIntersecting) e.target.classList.add('visible');
+      })
+    },{threshold:.15});
+    reveals.forEach(r => revealObserver.observe(r));
+
+    // Animated counters for impact stats
+    const counters = [
+      {id:'live-lives', value:12000},
+      {id:'live-communities', value:27},
+      {id:'live-volunteers', value:150},
+      {id:'live-women-children', value:5000}
+    ];
+    const started = false;
+    const runCounters = () => {
+      counters.forEach(c => {
+        const el = document.getElementById(c.id);
+        if(!el) return;
+        let current = 0;
+        const target = c.value;
+        const step = Math.ceil(target/100);
+        const timer = setInterval(()=>{
+          current += step;
+          if(current >= target){ current = target; clearInterval(timer); }
+          el.textContent = current.toLocaleString();
+        }, 20);
+      });
+    };
+    const onScroll = () => {
+      const impactSection = document.getElementById('impact');
+      if(!impactSection) return;
+      const rect = impactSection.getBoundingClientRect();
+      if(rect.top < window.innerHeight*0.8){
+        runCounters();
+        window.removeEventListener('scroll', onScroll);
+      }
+    };
+    window.addEventListener('scroll', onScroll);
+    onScroll();
+
+    // Volunteer form submission (demo)
+    function handleVolunteerSubmit(){
+      alert('Thank you for your interest! We will contact you with next steps.');
+      document.getElementById('volunteer-form').reset();
+    }
+    // Contact form submission (demo)
+    function handleSubmitContact(){
+      alert('Thank you for reaching out. We will respond to your message soon.');
+      document.getElementById('contact-form').reset();
+    }
+    // Newsletter submission (demo)
+    function handleNewsletter(){
+      const email = document.getElementById('news-email').value;
+      document.getElementById('newsletter-status').textContent = 'Thanks for subscribing, ' + email + '!';
+      document.getElementById('news-email').value = '';
+    }
+  </script>
+</body>
+</html>
